@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>😈 Hacker Website</h1>
+  <button onclick="steal()">Steal Data</button>
+
+  <p id="stolen"></p>
+
+  <script>
+  async  function steal() {
+  try {
+      const response = await fetch("http://localhost:4000/hello");
+
+      const data = await response.text(); 
+      console.log(data, response , "data")
+
+      document.getElementById("stolen").innerText = data;
+    } 
+    catch (err) {
+      document.getElementById("stolen").innerText = "CORS error";
+      console.error("Error:", err);
+    }
+
+
+
+
+    }
+  </script>
+</body>
+</html>
