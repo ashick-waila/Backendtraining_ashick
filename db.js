@@ -20,7 +20,7 @@ async function connectToDatabase() {
     pool = await sql.connect(config);
     console.log("Connected to SQL Server");
     const result = await pool.request().query(`select * from EMP`)
-    console.log(result , "result")
+    console.log( "result")
   } catch (err) {
     console.error("Database Connection Failed!", err);
   }
